@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "DM Sans", sans-serif;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  :root {
+    /* Base Colors */
+    --background: 0 0% 100%; /* White */
+    --foreground: 0 0% 4%; /* Black #0a0a0a */
+    
+    /* Surfaces */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 4%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 4%;
+    
+    /* Primary Accent: Gold #D4AF37 */
+    --primary: 43 65% 53%; 
+    --primary-foreground: 0 0% 4%; /* Black text on gold for contrast */
+    
+    /* Secondary: Black #0a0a0a */
+    --secondary: 0 0% 4%;
+    --secondary-foreground: 0 0% 100%;
+    
+    /* Muted: Light Gray */
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    
+    /* Accent: Very light gold tint or gray */
+    --accent: 43 65% 95%;
+    --accent-foreground: 0 0% 4%;
+    
+    /* System */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 43 65% 53%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    /* Base Colors */
+    --background: 0 0% 4%; /* Black #0a0a0a */
+    --foreground: 0 0% 98%; /* White */
+    
+    /* Surfaces */
+    --card: 0 0% 10%; /* Dark Gray #1a1a1a */
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 98%;
+    
+    /* Primary Accent: Gold #D4AF37 */
+    --primary: 43 65% 53%;
+    --primary-foreground: 0 0% 4%;
+    
+    /* Secondary: Darker Gray */
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 98%;
+    
+    /* Muted: Gray */
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+    
+    /* Accent: Dark Gold Tint */
+    --accent: 43 65% 15%;
+    --accent-foreground: 0 0% 98%;
+    
+    /* System */
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 43 65% 53%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .bg-parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .gold-gradient {
+    @apply bg-gradient-to-r from-[#D4AF37] to-[#e6c968];
+  }
+  .glass-panel {
+    @apply bg-background/80 backdrop-blur-md border border-border/50;
+  }
+}
